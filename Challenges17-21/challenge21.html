@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>DOM Challenges</title>
+	<title>DOM Challenges 21</title>
 	<style>
 		body{
 			font-family: Arial;
@@ -68,7 +68,21 @@
 	</main>
 	
 	<script>
+		var changeImg = document.querySelector("img");
+		changeImg.setAttribute("src", "http://meadpoint.net/images/xmasajax.jpg");
+		changeImg.setAttribute("alt", "New Ajax Img");
 
+		// var allLinks = document.querySelectorAll("a");
+		var allLinks = document.getElementsByTagName("a");
+		console.log(allLinks);
+		for(var i = 0; i < allLinks.length; i++){
+			var linkReceived = allLinks[i].getAttribute("href");
+			console.log(linkReceived);
+			if(linkReceived == "https://en.wikipedia.org/wiki/Llama"){
+				alert("Llama link found.");
+				allLinks[i].innerHTML = "Llamas are cool!";
+			}
+		}
 	</script>
 </body>
 </html>

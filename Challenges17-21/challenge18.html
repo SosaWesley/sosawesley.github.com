@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>DOM Challenges</title>
+	<title>DOM Challenges 18</title>
 	<style>
 		body{
 			font-family: Arial;
@@ -68,7 +68,11 @@
 	</main>
 	
 	<script>
+		var paragArray = document.getElementsByTagName("p");
 
+		for(var i = 0; i < paragArray.length; i++){
+			paragArray[i].style.color = "green";
+		}
 	</script>
 </body>
 </html>
