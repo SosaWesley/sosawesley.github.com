@@ -1,0 +1,160 @@
+#mySketch {
+    width: 800px;
+    height: 250px;
+    
+    background-image: url("images/placeholder.png");
+    background-repeat: no-repeat;
+    background-size: 800px 250px;
+
+    margin: auto;
+}
+
+header, footer {
+    box-sizing: border-box;
+    padding: 25px;
+
+    max-width: 1200px;
+    min-width: 800px;
+    margin: auto;
+
+    text-align: left;
+    
+    background-color: #CCCCCC;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+
+    margin-left: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: black;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+article {
+    width: 700px;
+    margin: auto;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+article p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+main {
+    margin: auto;
+    max-width: 1200px;
+    min-width: 800px;
+    justify-content: center;
+}
+
+main nav ul{
+    text-align: center;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+main img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article p {
+    display: block;
+}
+
+.container {
+    box-sizing: border-box;
+
+    /**Using Flexbox**/
+    display: flex;
+    flex-direction: row;
+
+    /**Align centers all the content**/
+    justify-content: center;
+    /**Align Top**/
+    align-items: flex-start;
+    align-content: center;
+
+    /**Centers the container**/
+    margin: auto;
+    max-width: 1200px;
+    min-width: 800px;
+
+    background-color: white;
+    
+    padding: 25px;
+}
+
+.container nav {
+    box-sizing: border-box;
+
+    width: 25%;
+    background-color: #EEEEEE;
+
+    padding: 25px;
+    margin: 25px;
+}
+
+/* @media only screen and (min-width: 800px) {
+    .container {
+        overflow: auto;
+        white-space: nowrap;
+    }
+} */
