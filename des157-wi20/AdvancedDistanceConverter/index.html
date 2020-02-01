@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Miles to Kilometers Converter</title>
+	
+	<!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	
+	<!--/ /-------- Google Fonts --------/ /-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap" rel="stylesheet">
+	
+	<!--/ /-------- My Styles --------/ /-->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<h1>Miles to Kilometers Converter</h1>
+    
+    <div class="container top">
+    	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
+		
+        <form method="post" action="somephpfile.php" id="convert">
+        
+        	<input type="text" name="distance" id="distance" placeholder="distance">
+            <input type="submit" name="convertdist" value="Convert Distance">
+        
+        </form>
+    </div>
+    <div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+	</div>
+	
+	<script>
+		//Initializes to Miles (default).
+		var converterType = "M";
+
+		function mToKm(input){
+			return (input * 1.609344);
+		}
+
+		function kmToM(input){
+			return (input * 0.621371192);
+		}
+
+		var formTag = document.querySelector("form");
+		console.log(`Formtag: ${formTag}`);
+		
+		formTag.addEventListener("submit",function(event){
+			//Don't want to go to new file.
+			event.preventDefault();
+			//Only selects the FIRST INPUT
+			var formData = document.querySelector("input").value;
+
+			//Makes the text NOT invisible.
+			var editAnswer = document.getElementsByClassName("invisible");
+			console.log(`Invisible class: ${editAnswer[0]}`);
+
+			//Checks to see if there exists an invisible class.
+			if(editAnswer[0] === undefined){
+				//Do nothing.
+			}
+			else {
+				editAnswer[0].removeAttribute("class");
+			}
+
+			//Input Validator
+			if(parseFloat(formData)){
+				if(converterType == "M"){
+					var convertedInput = mToKm(formData);
+					document.querySelector("h2").innerHTML = `${formData} miles converts to ${convertedInput.toFixed(3)} kilometers`;
+				}
+
+				else if(converterType == "K"){
+					var convertedInput = kmToM(formData);
+					document.querySelector("h2").innerHTML = `${formData} kilometers converts to ${convertedInput.toFixed(3)} miles`;
+				}
+
+				//Testing Input
+				// console.log(formData);
+				// console.log(`Miles to KM = ${mToKm(formData)}`);
+				// console.log(`3 decimal points: ${convertedInput.toFixed(3)}`);
+
+			}
+			else {
+				document.querySelector("h2").innerHTML = `Please enter a number.`;
+			} //Input Validator
+
+		}); //addEventListener Click
+
+		document.addEventListener("keydown", function(event){
+			//Converts converted key to String
+			var convertedKey = String.fromCharCode(event.which);
+			console.log(`Key Pressed: ${event}, converted: ${convertedKey}`);
+			//Problem: Have to make the switch statement into true.
+			switch (true) {
+				case (convertedKey == 'M'):
+					console.log("Miles to Kilometers.");
+					//sets converterType to M to Km.
+					converterType = "M";
+
+					textH1 = document.querySelector("h1");
+					textH1.innerHTML = "Miles to Kilometers Converter";
+
+					textDescript = document.querySelector("p");
+					textDescript.innerHTML = "Type in a number of miles and click the button to convert the distance to kilometers.";
+					break;
+				case (convertedKey == 'K'):
+					console.log("Kilometers to Miles.");
+					//sets converterType to Km to M.
+					converterType = "K";
+
+					textH1 = document.querySelector("h1");
+					textH1.innerHTML = "Kilometers to Miles Converter";
+
+					textDescript = document.querySelector("p");
+					textDescript.innerHTML = "Type in a number of kilometers and click the button to convert the distance to miles.";
+					break;
+				default:
+					console.log("Error. Please press M or K.");
+					break;
+			}//switch statement
+		});
+	</script>
+</body>
+</html>
