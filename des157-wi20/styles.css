@@ -1,10 +1,10 @@
 #mySketch {
     width: 800px;
     height: 250px;
-    
+/*     
     background-image: url("images/placeholder.png");
     background-repeat: no-repeat;
-    background-size: 800px 250px;
+    background-size: 800px 250px; */
 
     margin: auto;
 }
