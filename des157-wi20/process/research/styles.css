@@ -11,7 +11,7 @@ header, footer {
     background-color: #CCCCCC;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 2em;
@@ -23,6 +23,11 @@ h2 {
 
 h3 {
     font-size: 1.25em;
+    color: #763240;
+}
+
+h4 {
+    font-size: 1em;
     color: #763240;
 }
 
