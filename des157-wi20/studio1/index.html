@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <link href="styles.css" rel="stylesheet">
+    <title>Studio 1: Madlibs</title>
+</head>
+<body>
+    <h1>Certificate of Recognition Generator</h1>
+
+    <form id="myForm">
+        <label>Name
+            <input type="text" name="userName" placeholder="Enter your name.">
+        </label>
+
+        <label>What is your proudest accomplishment?
+            <input type="text" name="accomp" placeholder="Enter an event or a phrase.">
+        </label>
+
+        <label>When did you achieve it?
+            <input type="text" name="accompDate" placeholder="January 10, 2020">
+        </label>
+
+        <label>Where did you receive this accomplishment?
+            <input type="text" name="accompLocation" placeholder="Enter a location.">
+        </label>
+
+        <label>Who awarded this accomplishment to you?
+            <input type="text" name="accompNoun" placeholder="Enter a noun.">
+        </label>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <img src="images/trophy.png" width="50px">
+
+    <div id="madlib" class="invisible">
+        <h2>Certificate of Recognition</h2>
+        <h3 id="userName">[Name Placeholder]</h3>
+        <p>is awarded in recognition of</p>
+        <h3 id="userAccomp">[Award Placeholder]</h3>
+        <h4 id="userDateLocation">Awarded on [Date Placeholder] at [Location].</h4>
+        <p id="userOrgSig">[Name of Org]</p>
+        <p id="userOrg">Signed</p>
+    </div>
+
+    <footer>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
+
+    <script>
+        //Function plugs in input from user.
+        //Parameter type: array
+        function createMadLibs(submittedWords){
+            console.log(submittedWords);
+
+            var nameId = document.getElementById("userName");
+            console.log(nameId);
+            nameId.innerHTML = submittedWords[0];
+
+            var accompId = document.getElementById("userAccomp");
+            accompId.innerHTML = submittedWords[1];
+
+            var dateId = document.getElementById("userDateLocation");
+            dateId.innerHTML = "Awarded on " + submittedWords[2] + " at " + submittedWords[3] + ".";
+
+            var orgIdSig = document.getElementById("userOrgSig");
+            orgIdSig.innerHTML = submittedWords[4];
+
+            var orgId = document.getElementById("userOrg");
+            orgId.innerHTML = submittedWords[4];
+
+            var displayMadlib = document.getElementById("madlib");
+            console.log(displayMadlib);
+            displayMadlib.setAttribute("class", "visible");
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            // pull all data fr. form
+            var formData = document.querySelectorAll("input[type=text]");
+
+            // array holds value fr. form
+            var arrayInput = [];
+
+            // loop through query, and put data into array
+            // need to convert the query array into data
+            for(var i = 0; i < formData.length; i++){
+                arrayInput.push(formData[i].value);
+            }
+            console.log(formData);
+            console.log(arrayInput); 
+
+            createMadLibs(arrayInput);           
+        }); //form submission
+    </script>
+</body>
+</html>

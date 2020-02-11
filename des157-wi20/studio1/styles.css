@@ -1,0 +1,114 @@
+input {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    width: 40%;
+}
+
+/* change style when clicked */
+input[type=text]:focus {
+    background-color: #e8f4f8;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: #6e98a9;
+    color: white;
+}
+
+
+/* Invisible Class - Hides the Box*/
+.invisible { 
+    display: none;
+}
+
+.visible {
+    display: block;
+    width: 100%;
+    position: relative;
+    
+    margin: auto;
+    padding: 20px;
+
+    color: black;
+    background-color: white;
+}
+
+img {
+    position: absolute;
+    top: 150px;
+    width: 300px;
+    padding: 20px;
+    margin-left: auto;
+    right: 300px;
+}
+
+body {
+    background: lightgoldenrodyellow;
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+#madlib, h2, h3, h4, p {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+#userName {
+    font-size: 2em;
+    font-family: 'Playfair Display', serif;
+}
+
+#userAccomp {
+    font-size: 1.5em;
+}
+
+#userDateLocation {
+    font-size: 1.25em;
+}
+
+#userOrgSig {
+    font-size: 1.8em;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    padding-bottom: 0px;
+}
+
+#userOrg {
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px;
+}
+
+footer p {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
