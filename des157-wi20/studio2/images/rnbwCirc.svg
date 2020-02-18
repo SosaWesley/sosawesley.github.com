@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 147 146" style="enable-background:new 0 0 147 146;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_4_);}
+	.st2{fill:#C40000;}
+	.st3{fill:#F15A24;}
+	.st4{fill:#FFFF00;}
+	.st5{fill:#00FF00;}
+	.st6{fill:#0000FF;}
+	.st7{fill:#1B1464;}
+</style>
+<title>Asset 1</title>
+<g id="Layer_2_1_">
+	<g id="Rainbow_Button">
+		<g>
+			<defs>
+				<circle id="SVGID_1_" cx="74" cy="73" r="73"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+			</clipPath>
+			<g class="st0">
+				<path d="M-106.5-12.8v162.7c0,0,39.7-23.7,85.8-23.7S98,172.6,129.6,172.6s84.2-22.7,84.2-22.7V-12.8c0,0-52.5,22.7-84.5,22.7
+					S24.9-36.5-20.7-36.5S-106.5-12.8-106.5-12.8z"/>
+				<g>
+					<defs>
+						<path id="SVGID_3_" d="M-106.5-12.8v162.7c0,0,39.7-23.7,85.8-23.7S98,172.6,129.6,172.6s84.2-22.7,84.2-22.7V-12.8
+							c0,0-52.5,22.7-84.5,22.7S24.9-36.5-20.7-36.5S-106.5-12.8-106.5-12.8z"/>
+					</defs>
+					<clipPath id="SVGID_4_">
+						<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+					</clipPath>
+					<g class="st1">
+						<path class="st2" d="M-106.5-12.8v39.2c0,0,99.4-60.2,159.6,0s163.8,0,163.8,0v-44.3c0,0-51.5,24.7-88.6,23.7
+							S26.4-42.7-22-41.6C-70.4-40.6-106.5-12.8-106.5-12.8"/>
+						<path class="st3" d="M-106.5,14v31.5c0,0,99.4-48.4,159.6,0s160.7,0,160.7,0V14c0,0-48.4,19-85.5,18.2S26.4-5.9-22-5.1
+							S-106.5,14-106.5,14"/>
+						<path class="st4" d="M-106.5,39.7v31.5c0,0,99.4-48.4,159.6,0s165.8-1,165.8-1V38.7c0,0-53.6,20.1-90.6,19.2
+							S26.4,19.9-22,20.7S-106.5,39.7-106.5,39.7"/>
+						<path class="st5" d="M-106.5,65.5V97c0,0,99.4-48.4,159.6,0S216.9,95,216.9,95V63.4c0,0-51.5,21.1-88.6,20.3
+							S26.4,45.6-22,46.4S-106.5,65.5-106.5,65.5"/>
+						<path class="st6" d="M-107.5,87.1v31.5c0,0,99.4-48.4,159.6,0s163.8-2.1,163.8-2.1V85.1c0,0-51.5,21.1-88.6,20.3
+							S25.4,67.2-23,68.1S-107.5,87.1-107.5,87.1"/>
+						<path class="st7" d="M-106.5,116.9v32.2c0,0,99.4-40.4,159.6,9.1s160.7-9.1,160.7-9.1v-32.2c0,0-48.4,19.5-85.5,18.6
+							C91.3,134.7,29.5,94.3-22,97.4C-70.3,100.3-106.5,116.9-106.5,116.9"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

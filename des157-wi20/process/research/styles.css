@@ -105,6 +105,12 @@ main img {
     /* Auto resizing for image. */
     max-width: 100%;
     height: auto;
+
+    transition: transform .2s;
+}
+
+img:hover {
+    transform: scale(1.5);
 }
 
 article p {
