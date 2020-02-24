@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #canvas {
+            width: 500px;
+            height: 500px;
+            background: gray;
+            margin: auto;
+        }
+
+        #circle {
+            height: 25px;
+            width: 25px;
+            background-color: blue;
+            border-radius: 50%;
+
+            position: absolute;
+            z-index: 1;
+        }
+
+        #circle2 {
+            height: 25px;
+            width: 25px;
+            background-color: red;
+            border-radius: 50%;
+
+            position: absolute;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .move {
+            animation: move 1s;
+            /* animation-name: fadein; */
+        }
+
+        @keyframes move {
+            from {
+                top: 10px;
+                left: 10px;
+            }
+            to {
+                top: 50px;
+                left: 50px;
+            }
+        }
+    </style>
+
+    <title>Distance Calculator</title>
+</head>
+
+<body>
+    <div id="canvas">
+        <p>Click anywhere to create a point.</p>
+    </div>
+
+    <div id="circle" class="hidden">
+    </div>
+
+    <div id="circle2" class="hidden">
+    </div>
+
+    <button type="button">Continue: Select Target Location</button>
+    <button type="button" id="send">Send Mail</button>
+
+    <script>
+
+        "use strict";
+
+        //Object: User mail data;
+        const userMailData = {
+            //Source coordinates.
+            xCoord: -1,
+            yCoord: -1,
+
+            //Target coordinates.
+            continue: -1,
+            x2Coord: -1,
+            y2Coord: -1,
+
+            //total Distance travlled
+            distanceTravelled: -1
+        } //userMailData
+
+        //x1,y1 == Source x,y
+        function saveXYcoord(x, y) {
+            userMailData.xCoord = x;
+            userMailData.yCoord = y;
+        }
+
+        //x2,y2 == Target x,y
+        function saveTargetXY(x, y){
+            userMailData.x2Coord = x;
+            userMailData.y2Coord = y;
+        }
+
+        function distance(mailData) {
+            //Source (x1,y1)
+            const x1 = mailData.xCoord;
+            const y1 = mailData.yCoord;
+
+            //Target (x2, y2)
+            const x2 = mailData.x2Coord;
+            const y2 = mailData.y2Coord;
+
+            //Checking variables
+            console.log(x1, y1, x2, y2);
+            console.log(x1 - x2, y1 - y2);
+            console.log(Math.pow(x1 - x2, 2), Math.pow(y1 - y2, 2));
+            console.log(Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) ));
+            mailData.distanceTravelled = (Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) ));
+        }
+
+
+        //userMailData
+        const targetBtn = document.querySelector("button");
+        targetBtn.addEventListener("click", function(event){
+            event.preventDefault;
+            //sets the userMailData to continue
+            userMailData.continue = 1;
+        } );
+
+        //sendMail
+        const travelBtn = document.getElementById("send");
+        travelBtn.addEventListener("click", function(event){
+            event.preventDefault;
+            pointInMap.setAttribute("class", "move");
+            pointInMap.style.left = `${userMailData.x2Coord}px`;
+            pointInMap.style.top = `${userMailData.y2Coord}px`;
+        } );
+
+        const pointInMap = document.getElementById("circle");
+        const targetPointInMap = document.getElementById("circle2");
+        const mapArea = document.getElementById("canvas");
+        
+        mapArea.addEventListener("click", function(event){
+            console.log(`xCoord: ${event.pageX}, yCoord: ${event.pageY}`);
+            if(userMailData.continue == -1){
+                saveXYcoord(event.pageX, event.pageY);
+
+                //update positioning of circle
+                pointInMap.style.left = `${userMailData.xCoord}px`;
+                pointInMap.style.top = `${userMailData.yCoord}px`;
+                //show circle
+                pointInMap.classList.remove("hidden");
+            }
+            else {
+                saveTargetXY(event.pageX, event.pageY);
+
+                //update positioning of circle
+                targetPointInMap.style.left = `${userMailData.x2Coord}px`;
+                targetPointInMap.style.top = `${userMailData.y2Coord}px`;
+                //show circle
+                targetPointInMap.classList.remove("hidden");
+                distance(userMailData);
+            }
+
+            console.log(userMailData);
+            console.log("Area in div is pressed.");
+
+        });
+    </script>
+</body>
+</html>
