@@ -19,7 +19,7 @@ header, footer {
 
     text-align: left;
     
-    background-color: #666666;
+    background-color: #d5c9ba;
 }
 
 h1 {
@@ -98,7 +98,7 @@ footer a:hover {
     max-width: 1200px;
     min-width: 800px;
 
-    background-color: #CCCCCC;
+    background-color: #f1eee7;
     
     padding: 25px;
 }
@@ -107,7 +107,7 @@ footer a:hover {
     box-sizing: border-box;
 
     width: 25%;
-    background-color: #EEEEEE;
+    background-color: #d8cec1;
 
     padding: 25px;
     margin: 25px;
