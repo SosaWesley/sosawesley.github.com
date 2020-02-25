@@ -1,0 +1,243 @@
+/* :root {
+    --origX: -1;
+    --origY: -1;
+    --targetX: -1;
+    --targetY: -1;
+} */
+
+* {
+    font-family: 'Roboto';
+}
+
+h1 {
+    font-weight: 700;
+}
+
+p {
+    margin-top: 10px;
+}
+
+#canvas {
+    width: 1080px;
+    height: 500px;
+    background: #c5dbf2;
+    margin: auto;
+    position: relative;
+}
+
+#canvas img {
+    width: 1080px;
+    height: 500px;
+    margin: auto;
+}
+
+#circle {
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+
+    position: absolute;
+    z-index: 1;
+}
+
+#circle img {
+    width: 300%;
+    height: 300%;
+    object-fit: fill;
+    position: absolute;
+
+    top: -75%;
+    left: -75%;
+}
+
+#circle2 {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+/* .move {
+    animation: move 1s;
+    animation: fadein 1s;
+} */
+
+/* @keyframes move {
+    from {
+        top: var(--origX);
+        left: var(--origY);
+    }
+    to {
+        top: var(--targetX);
+        left: var(--targetY);
+    }
+} */
+
+@keyframes move {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+header {
+    width: 1080px;
+    text-align: center;
+    background: black;
+    padding: 0;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    width: 150px;
+    height: 75px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+
+    border: none;
+    background-color: #5cb85c;
+    transition: 0.25s;
+
+    font-size: 1.125em;
+    font-weight: 700;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: lightgray;
+}
+
+#instructions {
+    box-sizing: border-box;
+    background: black;
+    color: white;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 20px;
+    padding-left: 25px;
+    height: 100%;
+    width: 300px;
+
+    text-align: left;
+}
+
+#distanceDiv {
+    box-sizing: border-box;
+    background: black;
+    color: white;
+
+    padding: 20px;
+    padding-right: 25px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 100%;
+    width: 300px;
+
+    text-align: right;
+}
+
+#buttonContainer {
+    box-sizing: border-box;
+    background: black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 1080px;
+    height: 95px;
+    margin: auto;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#buttonContainer:first-child {
+    margin-right: auto;
+}
+
+#buttonContainer:last-child {
+    margin-left: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background: lightgray;
+    text-align: center;
+    top: 125px;
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+footer a {
+    display: block;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    line-height: 1.5em;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}

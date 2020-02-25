@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Distance Calculator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Mail Distance Calculator</h1>
+    </header>
+
+    <div id="canvas">
+        <img src="images/map-01.svg" alt="world map">
+    </div>
+
+    <div id="circle" class="hidden">
+        <img src="images/Letter.svg" alt="letter icon">
+    </div>
+
+    <div id="circle2" class="hidden">
+    </div>
+
+   <div id="buttonContainer">
+        <div id="instructions">
+            <p>Click on the map to select where you're sending your letter <strong>from.</strong></p>
+        </div>
+        <button type="button" id="continue" disabled>Confirm Address</button>
+        <button type="button" id="send" disabled>Send Mail</button>
+        <div id="distanceDiv" class=hidden></div>
+   </div>
+
+   <footer>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

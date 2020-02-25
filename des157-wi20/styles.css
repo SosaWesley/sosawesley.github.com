@@ -19,7 +19,7 @@ header, footer {
 
     text-align: left;
     
-    background-color: #CCCCCC;
+    background-color: #666666;
 }
 
 h1 {
@@ -98,7 +98,7 @@ footer a:hover {
     max-width: 1200px;
     min-width: 800px;
 
-    background-color: white;
+    background-color: #CCCCCC;
     
     padding: 25px;
 }
