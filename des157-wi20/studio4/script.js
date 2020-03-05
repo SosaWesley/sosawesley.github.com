@@ -52,6 +52,7 @@ userForm.addEventListener("submit", function(){
     // }
     // console.log(newSubmission);
     db.push(convertToObj, function(){
+        resetForm();
         //test   
     });
 
@@ -72,6 +73,7 @@ function displaySubmit() {
 
         const divItem = document.createElement("div");
         divItem.setAttribute("id", `r-${ids}`);
+        divItem.setAttribute("class", "letter");
         divItem.innerHTML = `
             <p>Name: ${submissions.name}</p>
             <p>Country: ${submissions.country}</p>
@@ -81,6 +83,12 @@ function displaySubmit() {
 }
 
 displaySubmit();
+
+function resetForm(){
+    document.getElementById("name").value = "";
+    document.getElementById("country").value = "";
+    document.getElementById("msg").value = "";
+}
 
 //  Documentation for Reference:
 // Array -> Obj https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries

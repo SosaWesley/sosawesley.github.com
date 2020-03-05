@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>PEN:PALS - Submit</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav id="mainNav">
@@ -19,9 +21,10 @@
     </header>
 
     <form id="submitForm">
+        <h2>Submit Your Story</h2>
         <label>What is your Pen Name?
             <p>A Pen Name is a Fake Name.</p>
-            <input type="text" name="penName" placeholder="A pen name is a fake name.">
+            <input type="text" name="penName" id="name">
         </label>
 
         <label>Where are you writing from?
@@ -277,12 +280,10 @@
         </label>
 
         <label>Share your story below!
-            <textarea name="message"></textarea>
+            <textarea name="message" id="msg"></textarea>
         </label>
 
         <input type="submit" value="Submit">
-        
-        <h4>Submitted Stories</h4>
     </form>
 
     <div id="submitSection">
@@ -291,6 +292,8 @@
     </div>
 
     <footer>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
     </footer>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
