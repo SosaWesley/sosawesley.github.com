@@ -37,18 +37,24 @@ function displaySubmit() {
 displaySubmit();
 
 var overlay = document.getElementById("popUpWindow");
+var closeBtn = document.getElementById("closeBtn");
+//close popUp
 window.onclick = function(event) {
-    if (event.target == overlay) {
+    if (event.target == overlay || event.target == closeBtn) {
         this.overlay.style.opacity = 0;
+        closeBtn.style.opacity = 0;
         
         //Timeout for a delay in transition.
         setTimeout( function(){
             overlay.style.display = "none";
+            closeBtn.style.display = "none";
         }, 250);
+
     }
     console.log("Click on overlay");
 }
 
+//display PopUp
 document.addEventListener("click", function(event) {
     if(event.target.matches(".letter")) {
         console.log("Letter is clicked.");
@@ -57,9 +63,11 @@ document.addEventListener("click", function(event) {
         console.log(thisRecord);
 
         overlay.style.display = "block";
+        closeBtn.style.display = "block";
 
         setTimeout( function(){
             overlay.style.opacity = 1;
+            this.closeBtn.style.opacity = 1;
         }, 250);
 
         console.log(`InnerHTML: ${event.target.innerHTML}`);
@@ -79,9 +87,11 @@ document.addEventListener("click", function(event) {
         console.log(thisRecord);
 
         overlay.style.display = "block";
+        closeBtn.style.display = "block";
 
         setTimeout( function(){
             overlay.style.opacity = 1;
+            this.closeBtn.style.opacity = 1;
         }, 250);
 
         console.log(`InnerHTML: ${event.target.innerHTML}`);

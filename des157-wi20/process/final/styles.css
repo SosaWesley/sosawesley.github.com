@@ -230,6 +230,11 @@ footer {
     text-decoration: none;
 }
 
+footer a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
 /*Letter Container*/
 #submitSection {
     box-sizing: border-box;
@@ -302,6 +307,29 @@ footer {
     overflow: visible;
     white-space: normal;
 }
+
+
+#closeBtn {
+    display: none;
+    color: black;
+    position: fixed;
+    top: 15%;
+    right: 25%;
+    z-index: 11;
+
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 30px;
+
+    
+    transition: 0.2s ease-in;
+}
+
+#closeBtn:hover {
+    cursor: pointer;
+}  
 
 /*W3Schools Modal Example*/
 #popUpWindow {
@@ -395,6 +423,45 @@ footer {
     display: flex;
     margin: auto;
 } */
+
+/* About Page Styling */
+.aboutSection {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+#pinkBg {
+    background-color: #FDF3F2;
+}
+
+.aboutSection > .textContainer{
+    padding-top: 7.5%;
+}
+
+#lastAboutSection {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+#lastAboutSection > div {
+    display: block;
+}
+
+#lastAboutSection > div > img {
+    width: 100%;
+    padding-top: 50px;
+}
+
+#lastAboutSectionText {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    margin: auto;
+
+    width: 400px;
+}
 
 .textContainer {
     width: 50%;
