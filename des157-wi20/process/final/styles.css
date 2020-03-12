@@ -1,0 +1,416 @@
+/*Front Page*/
+/*Masthead*/
+
+#masthead {
+    display: block;
+    height: 66vh;
+
+    background: #FDF3F2;
+    text-align: center;
+    align-items: center;
+}
+
+#mastheadText {
+    max-height: 50%;
+    vertical-align: middle;
+    padding-top: 100px;
+}
+
+#mastheadText h1 {
+    font-size: 10em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    font-family: 'Alice', serif;
+}
+
+#mastheadText h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#mastheadButtonsBlock {
+    padding-top: 20px;
+}
+
+#mastheadButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#mastheadButtons a {
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+
+    border-radius: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.1s;
+}
+
+#mastheadButtons a:first-of-type {
+    margin-right: 20px;
+}
+
+#mastheadButtons > #readBtn {
+    box-sizing: border-box;
+    border-style: solid;
+    border: 2.5px solid #87C942;
+
+    background: transparent;
+    color: #87C942;
+    line-height: 45px;
+}
+
+#mastheadButtons > #readBtn:hover {
+    background: #5BA366;
+    line-height: 45px;
+    color: white;
+}
+
+
+#mastheadButtons > #submitBtn {
+    background: #87C942;
+    color: white;
+}
+
+#mastheadButtons > #submitBtn:hover {
+    background: #5BA366;
+}
+
+input, select, textarea {
+    display: block;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+}
+
+/*Submission Form*/
+#submitForm {
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: auto;
+    padding: 50px;
+    background: #FDF3F2;
+
+    margin-bottom: 50px;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+}
+
+select {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+#submitForm label {
+    display: block;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+#submitForm textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    
+    margin: 8px 0;
+    padding: 15px 20px;
+
+    border-style: solid;
+    border: 2px;
+}
+
+#submitForm input[type=submit] {
+    box-sizing: border-box;
+    width: 150px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+#submitForm input[type=submit]:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+
+/*Main Navigation Bar*/
+#mainNav {
+    position: relative;
+    z-index: 1;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
+
+#mainNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navContainer {
+    padding-right: 10px;
+}
+
+#logo {
+    margin-right: auto;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+.navContainer {
+    padding-right: 0;
+}
+
+#mainNav ul li a {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    /* display: inline-block; */
+    display: block;
+    height: 64px;
+    /* width: 125px; */
+
+    background: #EFB5C3;
+
+    /*Text*/
+    font-size: 1.25em;
+    line-height: 40px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+#mainNav ul li:first-of-type {
+    font-family: 'Alice', serif;
+    font-weight: 700;
+}
+
+#mainNav ul li a:hover {
+    background: deeppink;
+    color: black;
+}
+
+.navContainer {
+    padding: 0 15px;
+    background: #EFB5C3;
+}
+
+footer {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+
+    background: pink;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*Letter Container*/
+#submitSection {
+    box-sizing: border-box;
+    width: 75%;
+    margin: auto;
+    padding: 50px;
+    display: grid;
+
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
+    /*fr = fraction*/
+    /* grid-template-columns : 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 150px 150px;
+
+    transition: 5s;
+}
+
+/*Letter box*/
+.letter {
+    /* background: goldenrod; */
+
+    background-image: url(./images/letter.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 0.25s;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+
+    width: 100%;
+    height: 150px;
+
+}
+
+.letter p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.letter p:first-of-type {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.letter p:last-of-type {
+    margin-top: 20px;
+}
+
+.letter:hover {
+    transform: scale(1.1);
+    background-image: url(./images/letterOpen.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    overflow: visible;
+}
+
+.story {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+#popUpWindowText .story {
+    overflow: visible;
+    white-space: normal;
+}
+
+/*W3Schools Modal Example*/
+#popUpWindow {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    transition: 0.2s ease-in;
+}
+
+#popUpWindowText {
+    background-color: white;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+#popUpWindowText img {
+    width: 100%;
+}
+
+#confirm {
+    text-align: center;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#popUpWindowText > #buttonContainer > a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+
+    border-radius: 10px;
+    background: #87C942;
+    color: white;
+
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.1s;
+}
+
+
+#popUpWindowText #buttonContainer > a:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.penName {
+    font-family: 'Alice', serif;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+#popUpWindowText .penName{
+    font-family: 'Alice', serif;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+#popUpWindowText .story {
+    white-space: pre-wrap;
+}
+
+/*Text and Img Formatting*/
+#submitPreface, #indexPreface {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+/* 
+#indexPreface {
+    width: 100%;
+    display: flex;
+    margin: auto;
+} */
+
+.textContainer {
+    width: 50%;
+    flex: 1;
+    padding: 50px;
+    padding-top: 15%;
+}
+
+.imgContainer {
+    box-sizing: border-box;
+    max-width: 400px;
+    max-width: 50%;
+    flex: 1;
+    padding: 50px;
+}
+
+.imgContainer img {
+    object-fit: cover;
+}

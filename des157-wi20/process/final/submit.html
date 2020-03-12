@@ -5,6 +5,7 @@
     <title>PEN:PALS - Submit</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alice&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 
@@ -12,16 +13,28 @@
     <header>
         <nav id="mainNav">
             <ul class="navContainer">
-                <li><a href="./index.html">PEN:PALS</a></li>
+                <li id="logo"><a href="./index.html">PEN:PALS</a></li>
                 <li><a>About</a></li>
-                <li><a>Read</a></li>
+                <li><a href="index.html#submitPreface">Read</a></li>
                 <li><a href="./submit.html">Submit</a></li>
             </ul>
         </nav>
     </header>
 
+    <div id="submitPreface">
+        <div class="textContainer">
+            <h2>Submit Your Story</h2>
+            <p>Fill out the form below to share your story and be a part of PEN:PALS.</p>
+            <p>PEN:PALS is anonymous, so feel free to be vulnerable, and share what you're comfortable sharing.</p>
+            <p><strong>Share your story, speak your truth.</strong></p>
+        </div>
+        <div class="imgContainer">
+            <img src="images/undraw_envelope.svg" alt="envelope" width="500">
+        </div>
+    </div>
+
     <form id="submitForm">
-        <h2>Submit Your Story</h2>
+        <h2>Story Submission Form</h2>
         <label>What is your Pen Name? (A Pen Name is a fake name)
             <input type="text" name="penName" id="name">
         </label>
@@ -288,19 +301,24 @@
 
     <div id="popUpWindow">
         <div id="popUpWindowText">
-            YEET
+            <img src="./images/undraw_message_sent.svg" alt="message sent">
+            <div id="confirm">
+                <p>Thank you for your submission.</p> 
+                <p>Please visit the home page to see your story be a part of PEN:PALS.</p>
+            </div>
+            <div id="buttonContainer">
+                <a href="index.html">Back to Home</a>
+            </div>
         </div>
     </div>
 
-    <div id="submitSection">
-        <!-- <h4>Submissions: </h4>
-        <div>Submissions 1</div> -->
+    <!-- <div id="submitSection">
         <div class="letter">
             <p>Name: LOCAL LETTER</p>
             <p>Country: Embedded</p>
             <p class="story">Message: EMBEDDED LOCAL LETTER</p>
         </div>
-    </div>
+    </div> -->
 
     <footer>
         <a href="https://validator.w3.org/check?uri=referer">Valid HTML</a>
@@ -314,7 +332,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <script src="script.js">
+    <script src="submit.js">
     </script>
 </body>
 </html>

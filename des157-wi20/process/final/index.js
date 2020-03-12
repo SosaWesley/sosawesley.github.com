@@ -11,61 +11,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const userForm = document.getElementById("submitForm");
-
-//Submit Form
-userForm.addEventListener("submit", function(){
-    event.preventDefault();
-    //get all information from array
-    formData = userForm.elements;
-
-    //Nested Array: 
-    var arrayInput = [];
-
-    arrayInput.push(["name", formData.item(0).value]);
-
-    arrayInput.push(["country", formData.item(1).value]);
-
-    arrayInput.push(["message", formData.item(2).value]);
-
-    console.log(formData);
-    console.log(arrayInput);
-
-    //converts array into Key-Pair Value
-    const convertToObj = Object.fromEntries(arrayInput);
-    console.log(convertToObj);
-
-    //convert object into JSON
-    const objToJSON = JSON.stringify(convertToObj);
-    console.log(objToJSON);
-
-
-    //adding to firebaseDatabase
-    const db = firebase.database().ref('submissions');
-    const newSubmission = {};
-
-
-    // for (let i = 0; i < inputs.length; i++) {
-    //     let key = inputs[i].getAttribute("name");
-    //     let value = inputs[i].value;
-    //     newFriend[key] = value;
-    // }
-    // console.log(newSubmission);
-    db.push(convertToObj, function(){
-        //clears submit form
-        resetForm();
-        //refreshes the page so the submitted item will appear correctly.
-        setTimeout( function(){
-            window.location.reload(true);
-        }, 1000);
-
-        //refreshes the organization of the page
-        // displaySubmit();
-        //test   
-    });
-});//Form Submission
-
-
 const submissionsList = document.getElementById("submitSection");
 
 //getting Data from Database
@@ -75,16 +20,14 @@ function displaySubmit() {
     dbRef.on("child_added", function(snap){
         const submissions = snap.val();
         const ids = snap.key;
-        // console.log(submissions);
-        // console.log(ids);
 
         const divItem = document.createElement("div");
         divItem.setAttribute("id", `r-${ids}`);
         divItem.setAttribute("class", "letter");
         divItem.innerHTML = `
-            <p>Name: ${submissions.name}</p>
-            <p>Country: ${submissions.country}</p>
-            <p class="story">Message: ${submissions.message}</p>`;
+            <p class="penName">${submissions.name}</p>
+            <p>${submissions.country}</p>
+            <p class="story">${submissions.message}</p>`;
         submissionsList.append(divItem);
     } );
     //after getting all letters, make letter clickable.
@@ -93,20 +36,18 @@ function displaySubmit() {
 
 displaySubmit();
 
-function resetForm(){
-    document.getElementById("name").value = "";
-    document.getElementById("country").value = "";
-    document.getElementById("msg").value = "";
-}
-
 var overlay = document.getElementById("popUpWindow");
 window.onclick = function(event) {
     if (event.target == overlay) {
-        overlay.style.display = "none";
+        this.overlay.style.opacity = 0;
+        
+        //Timeout for a delay in transition.
+        setTimeout( function(){
+            overlay.style.display = "none";
+        }, 250);
     }
     console.log("Click on overlay");
 }
-
 
 document.addEventListener("click", function(event) {
     if(event.target.matches(".letter")) {
@@ -114,12 +55,40 @@ document.addEventListener("click", function(event) {
         console.log(`Event: ${event }`);
         const thisRecord = event.target.getAttribute("id");
         console.log(thisRecord);
+
         overlay.style.display = "block";
+
+        setTimeout( function(){
+            overlay.style.opacity = 1;
+        }, 250);
 
         console.log(`InnerHTML: ${event.target.innerHTML}`);
         
         let popUpWindowText = document.getElementById("popUpWindowText");
+        
         popUpWindowText.innerHTML = event.target.innerHTML;
+    }
+
+    else if(event.target.matches(".letter p")) {
+        console.log("Paragraph is CLICKED.");
+        console.log(`Event: ${event }`);
+        const clickedPar = event.target;
+        const fullLetter = clickedPar.parentElement;
+
+        const thisRecord = event.target.getAttribute("id");
+        console.log(thisRecord);
+
+        overlay.style.display = "block";
+
+        setTimeout( function(){
+            overlay.style.opacity = 1;
+        }, 250);
+
+        console.log(`InnerHTML: ${event.target.innerHTML}`);
+        
+        let popUpWindowText = document.getElementById("popUpWindowText");
+        
+        popUpWindowText.innerHTML = fullLetter.innerHTML;
     }
 }, false);
 

@@ -36,7 +36,7 @@ userForm.addEventListener("submit", function(){
     console.log(convertToObj);
 
     //convert object into JSON
-    const objToJSON = JSON.stringify(convertToObj);
+    const objToJSON = JSON.stringify(convertToObj);;
     console.log(objToJSON);
 
 
@@ -44,25 +44,26 @@ userForm.addEventListener("submit", function(){
     const db = firebase.database().ref('submissions');
     const newSubmission = {};
 
-
-    // for (let i = 0; i < inputs.length; i++) {
-    //     let key = inputs[i].getAttribute("name");
-    //     let value = inputs[i].value;
-    //     newFriend[key] = value;
-    // }
-    // console.log(newSubmission);
     db.push(convertToObj, function(){
         //clears submit form
         resetForm();
         //refreshes the page so the submitted item will appear correctly.
         setTimeout( function(){
-            window.location.reload(true);
+            // window.location.reload(true);
         }, 1000);
 
         //refreshes the organization of the page
         // displaySubmit();
         //test   
     });
+
+    overlay.style.display = "block";
+
+    setTimeout( function(){
+        overlay.style.opacity = 1;
+    }, 500);
+
+
 });//Form Submission
 
 
@@ -75,8 +76,6 @@ function displaySubmit() {
     dbRef.on("child_added", function(snap){
         const submissions = snap.val();
         const ids = snap.key;
-        // console.log(submissions);
-        // console.log(ids);
 
         const divItem = document.createElement("div");
         divItem.setAttribute("id", `r-${ids}`);
@@ -91,7 +90,7 @@ function displaySubmit() {
     //letterClick();
 }
 
-displaySubmit();
+// displaySubmit();
 
 function resetForm(){
     document.getElementById("name").value = "";
@@ -102,7 +101,13 @@ function resetForm(){
 var overlay = document.getElementById("popUpWindow");
 window.onclick = function(event) {
     if (event.target == overlay) {
-        overlay.style.display = "none";
+        this.overlay.style.opacity = 0;
+        
+        //Timeout for a delay in transition.
+        setTimeout( function(){
+            overlay.style.display = "none";
+        }, 500);
+        // overlay.style.display = "none";
     }
     console.log("Click on overlay");
 }
@@ -114,7 +119,14 @@ document.addEventListener("click", function(event) {
         console.log(`Event: ${event }`);
         const thisRecord = event.target.getAttribute("id");
         console.log(thisRecord);
+
         overlay.style.display = "block";
+
+        setTimeout( function(){
+            overlay.style.opacity = 1;
+        }, 500);
+
+        // overlay.style.opacity = 1;
 
         console.log(`InnerHTML: ${event.target.innerHTML}`);
         

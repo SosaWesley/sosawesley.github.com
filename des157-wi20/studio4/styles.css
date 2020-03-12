@@ -13,6 +13,7 @@ body {
     width: 75%;
     margin: auto;
     padding: 50px;
+    background: lightyellow;
 }
 
 input[type=text] {
@@ -22,15 +23,44 @@ input[type=text] {
     margin: 8px 0;
 }
 
-textarea {
+select {
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+#submitForm label {
+    display: block;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+#submitForm textarea {
     box-sizing: border-box;
     width: 75%;
     height: 400px;
     
     margin: 8px 0;
+    padding: 15px 20px;
 
     border-style: solid;
     border-style: 2px;
+}
+
+#submitForm input[type=submit] {
+    box-sizing: border-box;
+    width: 25%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+#submitForm input[type=submit]:hover {
+    background-color: darkgreen;
+    cursor: pointer;
 }
 
 
@@ -92,6 +122,8 @@ footer {
 
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 150px 150px;
+
+    transition: 5s;
 }
 
 .letter {
@@ -108,4 +140,28 @@ footer {
 .letter:hover {
     transform: scale(1.5);
     background: lightyellow;
+}
+
+/*W3Schools Modal Example*/
+#popUpWindow {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    transition: 1s;
+}
+
+#popUpWindowText {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
 }
