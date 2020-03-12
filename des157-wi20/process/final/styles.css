@@ -202,8 +202,6 @@ select {
     color: black;
     text-align: center;
     text-decoration: none;
-    
-    transition: 0.2s;
 }
 
 #mainNav ul li:first-of-type {
@@ -214,6 +212,8 @@ select {
 #mainNav ul li a:hover {
     background: deeppink;
     color: black;
+    
+    transition: 0.2s ease-in;
 }
 
 .navContainer {
