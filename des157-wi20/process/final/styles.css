@@ -202,6 +202,8 @@ select {
     color: black;
     text-align: center;
     text-decoration: none;
+    
+    transition: 0.2s;
 }
 
 #mainNav ul li:first-of-type {
